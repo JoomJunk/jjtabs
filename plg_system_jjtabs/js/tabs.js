@@ -95,10 +95,12 @@ var RESPONSIVEUI = {};
 					// create tab list item from heading
 					// associate tab list item with tab panel
 					var $tabListItem = $('<li/>', { 
-						'class': 'responsive-tabs__list__item',
+						'class': 'responsive-tabs__list__item ' + $tabPanel.attr('data-tabcolour'),
 						id: $($tabPanel).attr('id'),
 						'aria-controls': 'tablist' + tablistcount +'-panel' + tabcount,
+						'data-tabname': 'tablist' + tablistcount + '-tab' + tabcount,
 						'role': 'tab',
+						'data-tabcolour' : $tabPanel.attr('data-tabcolour'),
 						tabindex: 0,
 						text: $tabHeading.text(),
 						keydown: function (objEvent) {
@@ -125,10 +127,11 @@ var RESPONSIVEUI = {};
 							$tabHeading.addClass('responsive-tabs__heading--active');
 
 							//remove active state from currently active tab list item
-							$tabList.find('.responsive-tabs__list__item--active').removeClass('responsive-tabs__list__item--active');
+							$olditem = $tabList.find('.responsive-tabs__list__item--active');
+							$olditem.removeClass('responsive-tabs__list__item--active').removeClass($olditem.attr('data-tabcolour')+'--active');
 
 							//make this tab active
-							$tabListItem.addClass('responsive-tabs__list__item--active');
+							$tabListItem.addClass('responsive-tabs__list__item--active').addClass($tabListItem.attr('data-tabcolour')+'--active');
 							
 							if(cookies=="true") {
 								// calculate the index of the active class
@@ -146,17 +149,22 @@ var RESPONSIVEUI = {};
 							$tabsWrapper.css('height', 'auto');
 						}
 					});
-
+					
 					//associate tab panel with tab list item
 					$tabPanel.attr({
 						'role': 'tabpanel',
-						'aria-labelledby': $tabListItem.attr('id'),
+						'aria-labelledby': $tabListItem.attr('data-tabname'),
+						'data-panelname': 'tablist' + tablistcount + '-panel' + tabcount
 					});
 
 					// if this is the active panel then make it the active tab item
 					if($tabPanel.hasClass('responsive-tabs__panel--active')) {
 						$tabListItem.addClass('responsive-tabs__list__item--active');
+						$tabListItem.addClass($tabPanel.attr('data-tabcolour') + '--active');
 					}
+
+					// Remove tab colour param now its in the li element
+					$tabPanel.removeAttr("data-tabcolour");
 
 					// add tab item
 					$tabList.append($tabListItem);
@@ -200,10 +208,10 @@ var RESPONSIVEUI = {};
 							var $currentActive = $tabs.find('.responsive-tabs__list__item--active');
 
 							//set the active tab list item (for desktop)
-							$currentActive.removeClass('responsive-tabs__list__item--active');
-							var panelId = $tabPanel.attr('id');
+							$currentActive.removeClass('responsive-tabs__list__item--active').removeClass($currentActive.attr('data-tabcolour')+'--active');
+							var panelId = $tabPanel.attr('data-panelname');
 							var tabId = panelId.replace('panel','tab');
-							$('#' + tabId).addClass('responsive-tabs__list__item--active');
+							$tabList.find('[data-tabname="' + tabId + '"]').addClass('responsive-tabs__list__item--active').addClass($tabList.find('[data-tabname="' + tabId + '"]').attr('data-tabcolour')+'--active');
 
 							//scroll to active heading only if it is below previous one
 							var tabsPos = $('.responsive-tabs').offset().top;

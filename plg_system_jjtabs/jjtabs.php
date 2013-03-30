@@ -255,7 +255,7 @@ class plgSystemJJTabs extends JPlugin
 				return false;
 			}
 			
-			$panel_replace='</div><'.$this->params->get('tag', 'h2').'>'.$params['title'].'</'.$this->params->get('tag', 'h2').'><div id="'.$params['identity'] .'" class="'. $params['colour'] .'" >';
+			$panel_replace='</div><'.$this->params->get('tag', 'h2').'>'.$params['title'].'</'.$this->params->get('tag', 'h2').'><div id="'.$params['identity'] .'" data-tabcolour="'. $params['colour'] .'" >';
 			$body = str_replace( $matches[0][$i] , $panel_replace, $body);
 		}
 	}

@@ -47,6 +47,11 @@
 		border-top-left-radius: 7px;
 		border-top-right-radius: 7px;
 		outline: none;
+		margin-right: 2px;
+		font-size: 13px;
+	}
+	
+	#jjtabs .responsive-tabs__list .blue {
 		background: #badaf4;
 		/* IE10 */ 
 		background-image: -ms-linear-gradient(top, #CCE3F6 0%, #A0CCEF 100%);
@@ -65,11 +70,9 @@
 
 		/* W3C Markup, IE10 */ 
 		background-image: linear-gradient(to bottom, #CCE3F6 0%, #A0CCEF 100%);
-		margin-right: 2px;
-		font-size: 13px;
 	}
 	
-	#jjtabs li.responsive-tabs__list__item:hover {
+	#jjtabs .responsive-tabs__list .blue:hover {
 		background-color: #86bdeb;
 		/* Mozilla Firefox */ 
 		background-image: -moz-linear-gradient(top, #A0CCEF 0%, #5EA8E4 100%);
@@ -87,7 +90,7 @@
 		background-image: linear-gradient(to bottom, #A0CCEF 0%, #5EA8E4 100%);
 	}
 	
-	#jjtabs li.responsive-tabs__list__item--active, #jjtabs li.responsive-tabs__list__item--active:hover {
+	#jjtabs .responsive-tabs__list .blue--active, #jjtabs .responsive-tabs__list .blue--active:hover {
 		background-color: #479add;
 		/* Mozilla Firefox */ 
 		background-image: -moz-linear-gradient(top, #5EA8E4 0%, #2384D3 100%);
