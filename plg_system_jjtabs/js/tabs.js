@@ -98,7 +98,7 @@ var RESPONSIVEUI = {};
 						'class': 'responsive-tabs__list__item ' + $tabPanel.attr('data-tabcolour'),
 						id: $($tabPanel).attr('id'),
 						'aria-controls': 'tablist' + tablistcount +'-panel' + tabcount,
-						'data-tabname': 'tablist' + tablistcount + '-tab' + tabcount,
+						'data-tabref': 'tablist' + tablistcount + '-tab' + tabcount,
 						'role': 'tab',
 						'data-tabcolour' : $tabPanel.attr('data-tabcolour'),
 						tabindex: 0,
@@ -153,8 +153,8 @@ var RESPONSIVEUI = {};
 					//associate tab panel with tab list item
 					$tabPanel.attr({
 						'role': 'tabpanel',
-						'aria-labelledby': $tabListItem.attr('data-tabname'),
-						'data-panelname': 'tablist' + tablistcount + '-panel' + tabcount
+						'aria-labelledby': $tabListItem.attr('data-tabref'),
+						'data-panelref': 'tablist' + tablistcount + '-panel' + tabcount
 					});
 
 					// if this is the active panel then make it the active tab item
@@ -209,9 +209,9 @@ var RESPONSIVEUI = {};
 
 							//set the active tab list item (for desktop)
 							$currentActive.removeClass('responsive-tabs__list__item--active').removeClass($currentActive.attr('data-tabcolour')+'--active');
-							var panelId = $tabPanel.attr('data-panelname');
+							var panelId = $tabPanel.attr('data-panelref');
 							var tabId = panelId.replace('panel','tab');
-							$tabList.find('[data-tabname="' + tabId + '"]').addClass('responsive-tabs__list__item--active').addClass($tabList.find('[data-tabname="' + tabId + '"]').attr('data-tabcolour')+'--active');
+							$tabList.find('[data-tabref="' + tabId + '"]').addClass('responsive-tabs__list__item--active').addClass($tabList.find('[data-tabref="' + tabId + '"]').attr('data-tabcolour')+'--active');
 
 							//scroll to active heading only if it is below previous one
 							var tabsPos = $('.responsive-tabs').offset().top;
