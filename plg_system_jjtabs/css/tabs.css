@@ -14,7 +14,7 @@
 		display: none;
 	}
 	#jjtabs .responsive-tabs__heading {
-		border: 1px solid black;
+		border: 1px solid #000000;
 		border-radius: 4px;
 		outline: none;
 		margin: 0px;
@@ -28,7 +28,7 @@
 	}
 
 	#jjtabs .responsive-tabs__panel--active {
-		border: 1px solid #000000;
+		border: 1px solid #b4b4b4;
 		padding: 5px;
 		width: 100%;
 		margin-top: 2px;
@@ -42,7 +42,7 @@
 	}
 
 	#jjtabs li.responsive-tabs__list__item {
-		border: 1px solid #000000;
+		border: 1px solid #b4b4b4;
 		padding: 5px;
 		border-top-left-radius: 7px;
 		border-top-right-radius: 7px;
