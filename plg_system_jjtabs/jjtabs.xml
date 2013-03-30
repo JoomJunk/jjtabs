@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" version="2.5" method="upgrade">
+	<name>PLG_JJTABS_SYSTEM_JJTABS</name>
+	<author>JoomJunk</author>
+	<creationDate>20th Jan 2013</creationDate>
+	<copyright>Copyright (C) 2013 JoomJunk</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>admin@joomjunk.co.uk</authorEmail>
+	<authorUrl>http://www.joomjunk.co.uk</authorUrl>
+	<version>1.0.0</version>
+	<description></description>
+	
+	<!-- Runs on install/uninstall/update -->
+	<scriptfile>script.php</scriptfile>
+	
+	<languages>
+			<language tag="en-GB">language/en-GB/en-GB.plg_system_jjtabs.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.plg_system_jjtabs.sys.ini</language>
+	</languages>
+
+	<files>
+		<filename plugin="jjtabs">jjtabs.php</filename>
+		<filename>index.html</filename>
+		<folder>js</folder>
+		<folder>css</folder>
+		<folder>images</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="cookies" type="radio" default="false" label="PLG_JJTABS_USE_COOKIES_LABEL" description="PLG_JJTABS_USE_COOKIES_DESC">
+					<option value="true">JYES</option>
+					<option value="false">JNO</option>
+				</field>
+				<field name="click" type="radio" default="true" label="PLG_JJTABS_HOVER_OR_CLICK_LABEL" description="PLG_JJTABS_HOVER_OR_CLICK_DESC">
+					<option value="true">PLG_JJTABS_CLICK</option>
+					<option value="false">PLG_JJTABS_HOVER</option>
+				</field>
+				<field name="colour" type="list" default="blue" label="PLG_JJTABS_DEFAULT_TAB_COLOUR_LABEL" description="PLG_JJTABS_DEFAULT_TAB_COLOUR_DESC">
+					<option value="blue">PLG_JJTABS_BLUE</option>
+					<option value="red">PLG_JJTABS_RED</option>
+					<option value="green">PLG_JJTABS_GREEN</option>
+				</field>
+				<field name="tag" type="list" default="h2" label="PLG_JJTABS_DEFAULT_HEADER_TAG_LABEL" description="PLG_JJTABS_DEFAULT_HEADER_TAG_DESC">
+					<option value="h1">PLG_JJTABS_H1</option>
+					<option value="h2">PLG_JJTABS_H2</option>
+					<option value="h3">PLG_JJTABS_H3</option>
+					<option value="h4">PLG_JJTABS_H4</option>
+					<option value="h5">PLG_JJTABS_H5</option>
+					<option value="h6">PLG_JJTABS_H6</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
