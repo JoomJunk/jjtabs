@@ -16,6 +16,13 @@ var RESPONSIVEUI = {};
 		var cookies = options.useStorage;
 		var click = options.useClick;
 		
+		if(click=="true") {
+			var functiontype = 'click';
+		}
+		else {
+			var functiontype = 'hover';
+		}
+		
 		if(cookies=="true") {
 			if ($.cookie('tabs')) {
 				var startoffset = parseInt($.cookie('tabs'));
@@ -47,23 +54,6 @@ var RESPONSIVEUI = {};
 			$tabSets.each(function() {
 
 				var $tabs = $(this);
-				
-				if($tabs.hasClass('responsive-tabs__panel--closed-accordion-only')) {
-					if(click=="true") {
-						var functiontype = 'click';
-					}
-					else {
-						var functiontype = 'mouseover';
-					}
-				}
-				else {
-					if(click=="true") {
-						var functiontype = 'click';
-					}
-					else {
-						var functiontype = 'hover';
-					}
-				}
 
 				// add tab heading and tab panel classes
 				$tabs.children('h1,h2,h3,h4,h5,h6').addClass('responsive-tabs__heading');
@@ -175,7 +165,7 @@ var RESPONSIVEUI = {};
 					});
 
 					//toggle tab panel if click heading (on mobile)
-					$tabHeading.click( function(){
+					$tabHeading.on(functiontype, function(){
 
 						// remove any hidden mobile class
 						$tabs.find('.responsive-tabs__panel--closed-accordion-only').removeClass('responsive-tabs__panel--closed-accordion-only');
