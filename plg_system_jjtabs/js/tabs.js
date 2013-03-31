@@ -47,6 +47,23 @@ var RESPONSIVEUI = {};
 			$tabSets.each(function() {
 
 				var $tabs = $(this);
+				
+				if($tabs.hasClass('responsive-tabs__panel--closed-accordion-only')) {
+					if(click=="true") {
+						var functiontype = 'click';
+					}
+					else {
+						var functiontype = 'mouseover';
+					}
+				}
+				else {
+					if(click=="true") {
+						var functiontype = 'click';
+					}
+					else {
+						var functiontype = 'hover';
+					}
+				}
 
 				// add tab heading and tab panel classes
 				$tabs.children('h1,h2,h3,h4,h5,h6').addClass('responsive-tabs__heading');
@@ -94,49 +111,30 @@ var RESPONSIVEUI = {};
 					// CREATE TAB ITEMS (VISIBLE ON DESKTOP)
 					// create tab list item from heading
 					// associate tab list item with tab panel
-					var $tabListItem = $('<li/>', { 
-						'class': 'responsive-tabs__list__item ' + $tabPanel.attr('data-tabcolour'),
-						id: $($tabPanel).attr('id'),
-						'aria-controls': 'tablist' + tablistcount +'-panel' + tabcount,
-						'data-tabref': 'tablist' + tablistcount + '-tab' + tabcount,
-						'role': 'tab',
-						'data-tabcolour' : $tabPanel.attr('data-tabcolour'),
-						tabindex: 0,
-						text: $tabHeading.text(),
-						keydown: function (objEvent) {
-							if (objEvent.keyCode === 13) { // if user presses 'enter'
-								$tabListItem.click();
-							}
-						},
-						click: function() {
-							//Show associated panel
-
-							//set height of tab container to highest panel height to avoid page jump
+					var options = {};
+					options["keydown"] = function (objEvent) {
+						if (objEvent.keyCode === 13) { // if user presses 'enter'
+							$tabListItem.click();
+						}
+					}		
+					options["class"] = 'responsive-tabs__list__item ' + $tabPanel.attr('data-tabcolour');
+					options["id"] = $($tabPanel).attr('id');
+					options["aria-controls"] = 'tablist' + tablistcount +'-panel' + tabcount;
+					options["data-tabref"] = 'tablist' + tablistcount + '-tab' + tabcount;
+					options["role"] = 'tab';
+					options["text"] = $tabHeading.text();
+					options["tabindex"] = 0;
+					options[functiontype] = function(){
 							$tabsWrapper.css('height', highestHeight);
-
-							// remove hidden mobile class from any other panel as we'll want that panel to be open at mobile size
 							$tabs.find('.responsive-tabs__panel--closed-accordion-only').removeClass('responsive-tabs__panel--closed-accordion-only');
-
-							// close current panel and remove active state from its (hidden on desktop) heading
 							$tabs.find('.responsive-tabs__panel--active').toggle().removeClass('responsive-tabs__panel--active').attr('aria-hidden','true').prev().removeClass('responsive-tabs__heading--active');
-
-							//make this tab panel active
 							$tabPanel.toggle().addClass('responsive-tabs__panel--active').attr('aria-hidden','false');
-
-							//make the hidden heading active
 							$tabHeading.addClass('responsive-tabs__heading--active');
-
-							//remove active state from currently active tab list item
 							$olditem = $tabList.find('.responsive-tabs__list__item--active');
 							$olditem.removeClass('responsive-tabs__list__item--active').removeClass($olditem.attr('data-tabcolour')+'--active');
-
-							//make this tab active
 							$tabListItem.addClass('responsive-tabs__list__item--active').addClass($tabListItem.attr('data-tabcolour')+'--active');
-							
 							if(cookies=="true") {
-								// calculate the index of the active class
 								var index = (($('.responsive-tabs__panel--active').index()-3)/2);
-								// set the cookie
 								if($.cookie('tabs')) {
 									$.removeCookie('tabs');
 									$.cookie('tabs', index, { expires: 7 });
@@ -144,11 +142,9 @@ var RESPONSIVEUI = {};
 									$.cookie('tabs', index, { expires: 7 });
 								}
 							}
-
-							//reset height of tab panels to auto
 							$tabsWrapper.css('height', 'auto');
-						}
-					});
+					}
+					var $tabListItem = $('<li/>', options);
 					
 					//associate tab panel with tab list item
 					$tabPanel.attr({
@@ -179,7 +175,7 @@ var RESPONSIVEUI = {};
 					});
 
 					//toggle tab panel if click heading (on mobile)
-					$tabHeading.click(function() {
+					$tabHeading.click( function(){
 
 						// remove any hidden mobile class
 						$tabs.find('.responsive-tabs__panel--closed-accordion-only').removeClass('responsive-tabs__panel--closed-accordion-only');
