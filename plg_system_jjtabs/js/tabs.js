@@ -48,20 +48,11 @@ var RESPONSIVEUI = {};
 
 				var $tabs = $(this);
 				
-				if($tabs.hasClass('responsive-tabs__panel--closed-accordion-only')) {
-					if(click=="true") {
-						var functiontype = 'click';
-					}
-					else {
-						var functiontype = 'mouseover';
-					}
+				if(click=="true") {
+					var functiontype = 'click';
 				}
 				else {
-					if(click=="true") {
-						var functiontype = 'click';
-					}
-					else {
-						var functiontype = 'hover';
+					var functiontype = 'hover';
 					}
 				}
 
