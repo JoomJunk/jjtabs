@@ -284,7 +284,7 @@ class plgSystemJJTabs extends JPlugin
 			if(version_compare(JVERSION,'3.0.0','ge')) {
 				JHtml::_('jquery.framework');
 			} else {
-				JHtml::_('script', 'plugins/system/jjtabs/js/jquery-1.8.3.min.js');	
+				JHtml::_('script', 'plugins/system/jjtabs/js/jquery-1.9.1.min.js');	
 				JHtml::_('script', 'plugins/system/jjtabs/js/jquery-conflict.js');	
 			}
 									
