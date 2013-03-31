@@ -127,22 +127,22 @@ class plgSystemJJTabs extends JPlugin
 			}
 			
 			// Look at default click/hover value from plugin parameters if not set in start tab
-			if(isset($params['click']))
+			if(isset($params['useClick']))
 			{
-				if($params['click'] == 'true')
+				if($params['useClick'] == 'true')
 				{
-					$params['click']= true;
+					$params['useClick']= true;
 				}
 				else
 				{
-					$params['click']= '';
+					$params['useClick']= '';
 				}
 			}
 			else
 			{
-				if($this->params->get('click', 'true') === 'true')
+				if($this->params->get('useClick', 'true') === 'true')
 				{
-					$params['click'] = $this->params->get('click', 'true');
+					$params['useClick'] = $this->params->get('click', 'true');
 				}
 			}
 			
@@ -152,7 +152,7 @@ class plgSystemJJTabs extends JPlugin
 			//$opt['onBackground'] = (isset($params['onBackground'])) ? $params['onBackground'] : null;
 			//$opt['display'] = (isset($params['startOffset'])) ? (int) $params['startOffset'] : null;
 			$opt['useStorage'] = (isset($params['useCookie']) && $params['useCookie']) ? 'true' : 'false';
-			$opt['useClick'] = (isset($params['click']) && $params['click']) ? 'true' : 'false';
+			$opt['useClick'] = (isset($params['useClick']) && $params['useClick']) ? 'true' : 'false';
 			
 			// Compact options down
 			$options = json_encode($opt);
