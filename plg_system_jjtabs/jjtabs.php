@@ -285,6 +285,7 @@ class plgSystemJJTabs extends JPlugin
 				JHtml::_('jquery.framework');
 			} else {
 				JHtml::_('script', 'plugins/system/jjtabs/js/jquery-1.8.3.min.js');	
+				JHtml::_('script', 'plugins/system/jjtabs/js/jquery-conflict.js');	
 			}
 									
 			$document = JFactory::getDocument();
