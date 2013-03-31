@@ -127,9 +127,23 @@ class plgSystemJJTabs extends JPlugin
 			}
 			
 			// Look at default click/hover value from plugin parameters if not set in start tab
-			if(!isset($params['click']) && ($this->params->get('click', 'true')==='true'))
+			if(isset($params['click']))
 			{
-				$params['click'] = $this->params->get('click', 'true');
+				if($params['click'] == 'true')
+				{
+					$params['click']= true;
+				}
+				else
+				{
+					$params['click']= '';
+				}
+			}
+			else
+			{
+				if($this->params->get('click', 'false') === 'true')
+				{
+					$params['click'] = $this->params->get('click', 'false');
+				}
 			}
 			
 			//TO DO Add Support for Cookie's, offset, onActive and onBackground in start tab
