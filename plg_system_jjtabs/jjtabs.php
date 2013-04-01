@@ -37,6 +37,15 @@ class plgSystemJJTabs extends JPlugin
 
 	function onAfterRender()
 	{
+		// Log tabs errors to specific file.
+		JLog::addLogger(
+			array(
+				'text_file' => 'plg_system_jjtabs.errors.php'
+			),
+			JLog::ALL,
+			'plg_system_jjtabs'
+		);
+		
 		// Check that we are in the site application.
 		if (JFactory::getApplication()->isAdmin())
 		{
@@ -180,14 +189,7 @@ class plgSystemJJTabs extends JPlugin
 				{
 					JError::raiseWarning(null, $e->getMessage());
 				}
-				// Log tabs errors to specific file.
-				JLog::addLogger(
-					array(
-						'text_file' => 'plg_system_jjtabs.errors.php'
-					),
-					JLog::ALL,
-					'plg_system_jjtabs'
-				);
+
 				JLog::add($e->getMessage(), JLog::WARNING, 'plg_system_jjtabs');
 				// Remove the processing tags - just leaving the text for
 				// a nice fallback
@@ -196,6 +198,17 @@ class plgSystemJJTabs extends JPlugin
 				return true;
 			}
 			JResponse::setBody($body);
+		} else {
+			if(version_compare(JVERSION,'3.0.0','ge'))
+			{
+				JFactory::getApplication()->enqueueMessage(JText::_( 'PLG_JJTABS_NO_START_PANEL_CLOSE' ), 'error');
+			}
+			else
+			{
+				JError::raiseWarning(null, JText::_( 'PLG_JJTABS_NO_START_PANEL_CLOSE' ));
+			}
+			JLog::add(JText::_( 'PLG_JJTABS_NO_START_PANEL_CLOSE' ), JLog::WARNING, 'plg_system_jjtabs');
+			$this->_processRemove($body_initial, $matches_start, $count_start, $matches_panel, $count_panel, $matches_end, $count_end);
 		}
 	}
 	
