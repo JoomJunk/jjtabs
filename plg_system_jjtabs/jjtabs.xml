@@ -2,7 +2,7 @@
 <extension type="plugin" group="system" version="2.5" method="upgrade">
 	<name>PLG_JJTABS_SYSTEM_JJTABS</name>
 	<author>JoomJunk</author>
-	<creationDate>20th Jan 2013</creationDate>
+	<creationDate>2nd April 2013</creationDate>
 	<copyright>Copyright (C) 2013 JoomJunk</copyright>
 	<license>http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<authorEmail>admin@joomjunk.co.uk</authorEmail>
@@ -38,9 +38,12 @@
 					<option value="false">PLG_JJTABS_HOVER</option>
 				</field>
 				<field name="colour" type="list" default="blue" label="PLG_JJTABS_DEFAULT_TAB_COLOUR_LABEL" description="PLG_JJTABS_DEFAULT_TAB_COLOUR_DESC">
+					<option value="grey">PLG_JJTABS_GREY</option>
 					<option value="blue">PLG_JJTABS_BLUE</option>
 					<option value="red">PLG_JJTABS_RED</option>
+					<option value="orange">PLG_JJTABS_ORANGE</option>
 					<option value="green">PLG_JJTABS_GREEN</option>
+					<option value="purple">PLG_JJTABS_PURPLE</option>
 				</field>
 				<field name="tag" type="list" default="h2" label="PLG_JJTABS_DEFAULT_HEADER_TAG_LABEL" description="PLG_JJTABS_DEFAULT_HEADER_TAG_DESC">
 					<option value="h1">PLG_JJTABS_H1</option>
