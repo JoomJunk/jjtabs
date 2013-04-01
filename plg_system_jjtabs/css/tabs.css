@@ -27,12 +27,12 @@
 		display: block !important;
 	}
 
-	#jjtabs .responsive-tabs__panel--active {
-		border: 1px solid #b4b4b4;
-		padding: 5px;
-		width: 100%;
+	#jjtabs .responsive-tabs__panel--active { 
+		border: 1px solid #C8C8C8;
+		padding: 5px 12px;
+		width: 96%;
 		margin-top: 2px;
-		border-radius: 10px;
+		border-radius: 7px;
 	}
 	
 	#jjtabs ul.responsive-tabs__list {
@@ -42,7 +42,7 @@
 	}
 
 	#jjtabs li.responsive-tabs__list__item {
-		border: 1px solid #b4b4b4;
+		border: none;
 		padding: 5px;
 		border-top-left-radius: 7px;
 		border-top-right-radius: 7px;
@@ -56,120 +56,189 @@
 		font-weight: bold;
 	}
 }
+/*** GREY TABS ***/
+#jjtabs .responsive-tabs__list .grey {
+	color: black;
+	background-color: #EFEFEF;
+	background-image: linear-gradient(to bottom, #EFEFEF 0%, #DEDEDE 100%);
+	background-image: -ms-linear-gradient(top, #EFEFEF 0%, #DEDEDE 100%);
+	background-image: -moz-linear-gradient(top, #EFEFEF 0%, #DEDEDE 100%);
+	background-image: -o-linear-gradient(top, #EFEFEF 0%, #DEDEDE 100%);
+	background-image: -webkit-linear-gradient(top, #EFEFEF 0%, #DEDEDE 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EFEFEF), color-stop(1, #DEDEDE));
+}
+
+#jjtabs .responsive-tabs__list .grey:hover {
+	background-color: #CDCDCD;
+	background-image: linear-gradient(to bottom, #CDCDCD 0%, #B7B7B7 100%);
+	background-image: -ms-linear-gradient(top, #CDCDCD 0%, #B7B7B7 100%);
+	background-image: -moz-linear-gradient(top, #CDCDCD 0%, #B7B7B7 100%);
+	background-image: -o-linear-gradient(top, #CDCDCD 0%, #B7B7B7 100%);
+	background-image: -webkit-linear-gradient(top, #CDCDCD 0%, #B7B7B7 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #CDCDCD), color-stop(1, #B7B7B7));
+}
+#jjtabs .responsive-tabs__list .grey--active, #jjtabs .responsive-tabs__list .grey--active:hover {
+	color: white;
+	background-color: #B7B7B7;
+	background-image: linear-gradient(to bottom, #B7B7B7 0%, #A9A9A9 100%);
+	background-image: -ms-linear-gradient(to bottom, #B7B7B7 0%, #A9A9A9 100%);
+	background-image: -moz-linear-gradient(top, #B7B7B7 0%, #A9A9A9 100%);
+	background-image: -o-linear-gradient(top, #B7B7B7 0%, #A9A9A9 100%);
+	background-image: -webkit-linear-gradient(top, #B7B7B7 0%, #A9A9A9 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #B7B7B7), color-stop(1, #A9A9A9));
+}
 
 /*** BLUE TABS ***/
 #jjtabs .responsive-tabs__list .blue {
-	background-color: #badaf4;
 	color: black;
-	/* IE10 */ 
-	background-image: -ms-linear-gradient(top, #CCE3F6 0%, #A0CCEF 100%);
-
-	/* Mozilla Firefox */ 
-	background-image: -moz-linear-gradient(top, #CCE3F6 0%, #A0CCEF 100%);
-
-	/* Opera */ 
-	background-image: -o-linear-gradient(top, #CCE3F6 0%, #A0CCEF 100%);
-
-	/* Webkit (Safari/Chrome 10) */ 
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #CCE3F6), color-stop(1, #A0CCEF));
-
-	/* Webkit (Chrome 11+) */ 
-	background-image: -webkit-linear-gradient(top, #CCE3F6 0%, #A0CCEF 100%);
-
-	/* W3C Markup, IE10 */ 
-	background-image: linear-gradient(to bottom, #CCE3F6 0%, #A0CCEF 100%);
+	background-color: #B7D1F4;
+	background-image: linear-gradient(to bottom, #B7D1F4 0%, #90B7EA 100%);
+	background-image: -ms-linear-gradient(top, #B7D1F4 0%, #90B7EA 100%);
+	background-image: -moz-linear-gradient(top, #B7D1F4 0%, #90B7EA 100%);
+	background-image: -o-linear-gradient(top, #B7D1F4 0%, #90B7EA 100%); 
+	background-image: -webkit-linear-gradient(top, #B7D1F4 0%, #90B7EA 100%); 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #B7D1F4), color-stop(1, #90B7EA));
 }
-
 #jjtabs .responsive-tabs__list .blue:hover {
-	background-color: #86bdeb;
-	/* Mozilla Firefox */ 
-	background-image: -moz-linear-gradient(top, #A0CCEF 0%, #5EA8E4 100%);
-
-	/* Opera */ 
-	background-image: -o-linear-gradient(top, #A0CCEF 0%, #5EA8E4 100%);
-
-	/* Webkit (Safari/Chrome 10) */ 
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #A0CCEF), color-stop(1, #5EA8E4));
-
-	/* Webkit (Chrome 11+) */ 
-	background-image: -webkit-linear-gradient(top, #A0CCEF 0%, #5EA8E4 100%);
-
-	/* W3C Markup, IE10 */ 
-	background-image: linear-gradient(to bottom, #A0CCEF 0%, #5EA8E4 100%);
+	background-color: #90B7EA;
+	background-image: linear-gradient(to bottom, #90B7EA 0%, #5790DB 100%);
+	background-image: -ms-linear-gradient(top, #90B7EA 0%, #5790DB 100%);
+	background-image: -moz-linear-gradient(top, #90B7EA 0%, #5790DB 100%);
+	background-image: -o-linear-gradient(top, #90B7EA 0%, #5790DB 100%);
+	background-image: -webkit-linear-gradient(top, #90B7EA 0%, #5790DB 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #90B7EA), color-stop(1, #5790DB));
 }
-
 #jjtabs .responsive-tabs__list .blue--active, #jjtabs .responsive-tabs__list .blue--active:hover {
-	background-color: #479add;
 	color: white;
-	/* Mozilla Firefox */ 
-	background-image: -moz-linear-gradient(top, #5EA8E4 0%, #2384D3 100%);
-
-	/* Opera */ 
-	background-image: -o-linear-gradient(top, #5EA8E4 0%, #2384D3 100%);
-
-	/* Webkit (Safari/Chrome 10) */ 
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #5EA8E4), color-stop(1, #2384D3));
-
-	/* Webkit (Chrome 11+) */ 
-	background-image: -webkit-linear-gradient(top, #5EA8E4 0%, #2384D3 100%);
-
-	/* W3C Markup, IE10 */ 
-	background-image: linear-gradient(to bottom, #5EA8E4 0%, #2384D3 100%);
+	background-color: #5790DB;
+	background-image: linear-gradient(to bottom, #5790DB 0%, #2367C0 100%);
+	background-image: -ms-linear-gradient(to bottom, #5790DB 0%, #2367C0 100%);
+	background-image: -moz-linear-gradient(top, #5790DB 0%, #2367C0 100%);
+	background-image: -o-linear-gradient(top, #5790DB 0%, #2367C0 100%);
+	background-image: -webkit-linear-gradient(top, #5790DB 0%, #2367C0 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #5790DB), color-stop(1, #2367C0));
 }
 
 /*** RED TABS ***/
 #jjtabs .responsive-tabs__list .red {
-	background-color: #edb9b7;
 	color: black;
-	/* Mozilla Firefox */
-	background-image: -moz-linear-gradient(top, #F1C9C7 0%, #E7A29E 100%);
-
-	/* Opera */ 
-	background-image: -o-linear-gradient(top, #F1C9C7 0%, #E7A29E 100%);
-
-	/* Webkit (Safari/Chrome 10) */ 
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F1C9C7), color-stop(1, #E7A29E));
-
-	/* Webkit (Chrome 11+) */ 
-	background-image: -webkit-linear-gradient(top, #F1C9C7 0%, #E7A29E 100%);
-
-	/* W3C Markup, IE10 */ 
-	background-image: linear-gradient(to bottom, #F1C9C7 0%, #E7A29E 100%);
+	background-color: #F3BAB6;
+	background-image: linear-gradient(to bottom, #F3BAB6 0%, #E9958F 100%);
+	background-image: -ms-linear-gradient(top, #F3BAB6 0%, #E9958F 100%);
+	background-image: -moz-linear-gradient(top, #F3BAB6 0%, #E9958F 100%);
+	background-image: -o-linear-gradient(top, #F3BAB6 0%, #E9958F 100%);
+	background-image: -webkit-linear-gradient(top, #F3BAB6 0%, #E9958F 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F3BAB6), color-stop(1, #E9958F));
 }
-
 #jjtabs .responsive-tabs__list .red:hover {
-	background-color: #e18a86;
-	/* Mozilla Firefox */ 
-	background-image: -moz-linear-gradient(top, #E7A29E 0%, #D86761 100%);
-
-	/* Opera */ 
-	background-image: -o-linear-gradient(top, #E7A29E 0%, #D86761 100%);
-
-	/* Webkit (Safari/Chrome 10) */ 
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E7A29E), color-stop(1, #D86761));
-
-	/* Webkit (Chrome 11+) */ 
-	background-image: -webkit-linear-gradient(top, #E7A29E 0%, #D86761 100%);
-
-	/* W3C Markup, IE10 */ 
-	background-image: linear-gradient(to bottom, #E7A29E 0%, #D86761 100%);
+	background-color: #E9958F;
+	background-image: linear-gradient(to bottom, #E9958F 0%, #DA6057 100%);
+	background-image: -ms-linear-gradient(top, #E9958F 0%, #DA6057 100%);
+	background-image: -moz-linear-gradient(top, #E9958F 0%, #DA6057 100%);
+	background-image: -o-linear-gradient(top, #E9958F 0%, #DA6057 100%);
+	background-image: -webkit-linear-gradient(top, #E9958F 0%, #DA6057 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E9958F), color-stop(1, #DA6057));
+}
+#jjtabs .responsive-tabs__list .red--active, #jjtabs .responsive-tabs__list .red--active:hover {
+	color: white;
+	background-color: #DA6057;
+	background-image: linear-gradient(to bottom, #DA6057 0%, #BF2D23 100%);
+	background-image: -ms-linear-gradient(top, #DA6057 0%, #BF2D23 100%);
+	background-image: -moz-linear-gradient(top, #DA6057 0%, #BF2D23 100%);
+	background-image: -o-linear-gradient(top, #DA6057 0%, #BF2D23 100%);
+	background-image: -webkit-linear-gradient(top, #DA6057 0%, #BF2D23 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #DA6057), color-stop(1, #BF2D23));
 }
 
-#jjtabs .responsive-tabs__list .red--active, #jjtabs .responsive-tabs__list .red--active:hover {
-	background-color: #cd534d;
+/*** ORANGE TABS ***/
+#jjtabs .responsive-tabs__list .orange {
+	color: black;
+	background-color: #F4D9B7;
+	background-image: linear-gradient(to bottom, #F4D9B7 0%, #EAC390 100%);
+	background-image: -ms-linear-gradient(top, #F4D9B7 0%, #EAC390 100%);
+	background-image: -moz-linear-gradient(top, #F4D9B7 0%, #EAC390 100%);
+	background-image: -o-linear-gradient(top, #F4D9B7 0%, #EAC390 100%);
+	background-image: -webkit-linear-gradient(top, #F4D9B7 0%, #EAC390 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F4D9B7), color-stop(1, #EAC390));
+}
+#jjtabs .responsive-tabs__list .orange:hover {
+	background-color: #EAC390;
+	background-image: linear-gradient(to bottom, #EAC390 0%, #DBA257 100%);
+	background-image: -ms-linear-gradient(top, #EAC390 0%, #DBA257 100%);
+	background-image: -moz-linear-gradient(top, #EAC390 0%, #DBA257 100%);
+	background-image: -o-linear-gradient(top, #EAC390 0%, #DBA257 100%);
+	background-image: -webkit-linear-gradient(top, #EAC390 0%, #DBA257 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EAC390), color-stop(1, #DBA257));
+}
+#jjtabs .responsive-tabs__list .orange--active, #jjtabs .responsive-tabs__list .orange--active:hover {
 	color: white;
-	/* Mozilla Firefox */ 
-	background-image: -moz-linear-gradient(top, #D86761 0%, #BD362F 100%);
+	background-color: #DBA257;
+	background-image: linear-gradient(to bottom, #DBA257 0%, #C07C23 100%);
+	background-image: -ms-linear-gradient(top, #DBA257 0%, #C07C23 100%);
+	background-image: -moz-linear-gradient(top, #DBA257 0%, #C07C23 100%);
+	background-image: -o-linear-gradient(top, #DBA257 0%, #C07C23 100%);
+	background-image: -webkit-linear-gradient(top, #DBA257 0%, #C07C23 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #DBA257), color-stop(1, #C07C23));
+}
 
-	/* Opera */ 
-	background-image: -o-linear-gradient(top, #D86761 0%, #BD362F 100%);
+/*** GREEN TABS ***/
+#jjtabs .responsive-tabs__list .green {
+	color: black;
+	background-color: #B8F5BB;
+	background-image: linear-gradient(to bottom, #B8F5BB 0%, #91EB97 100%);
+	background-image: -ms-linear-gradient(top, #B8F5BB 0%, #91EB97 100%);
+	background-image: -moz-linear-gradient(top, #B8F5BB 0%, #91EB97 100%);
+	background-image: -o-linear-gradient(top, #B8F5BB 0%, #91EB97 100%);
+	background-image: -webkit-linear-gradient(top, #B8F5BB 0%, #91EB97 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #B8F5BB), color-stop(1, #91EB97));
+}
+#jjtabs .responsive-tabs__list .green:hover {
+	background-color: #91EB97;
+	background-image: linear-gradient(to bottom, #91EB97 0%, #57DC60 100%);
+	background-image: -ms-linear-gradient(top, #91EB97 0%, #57DC60 100%);
+	background-image: -moz-linear-gradient(top, #91EB97 0%, #57DC60 100%);
+	background-image: -o-linear-gradient(top, #91EB97 0%, #57DC60 100%);
+	background-image: -webkit-linear-gradient(top, #91EB97 0%, #57DC60 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #91EB97), color-stop(1, #57DC60));
+}
+#jjtabs .responsive-tabs__list .green--active, #jjtabs .responsive-tabs__list .green--active:hover {
+	color: white;
+	background-color: #57DC60;
+	background-image: linear-gradient(to bottom, #57DC60 0%, #23C12E 100%);
+	background-image: -ms-linear-gradient(top, #57DC60 0%, #23C12E 100%);
+	background-image: -moz-linear-gradient(top, #57DC60 0%, #23C12E 100%);
+	background-image: -o-linear-gradient(top, #57DC60 0%, #23C12E 100%);
+	background-image: -webkit-linear-gradient(top, #57DC60 0%, #23C12E 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #57DC60), color-stop(1, #23C12E));
+}
 
-	/* Webkit (Safari/Chrome 10) */ 
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #D86761), color-stop(1, #BD362F));
-
-	/* Webkit (Chrome 11+) */ 
-	background-image: -webkit-linear-gradient(top, #D86761 0%, #BD362F 100%);
-
-	/* W3C Markup, IE10 */ 
-	background-image: linear-gradient(to bottom, #D86761 0%, #BD362F 100%);
+/*** PURPLE TABS ***/
+#jjtabs .responsive-tabs__list .purple {
+	color: black;
+	background-color: #DAB9F6;
+	background-image: linear-gradient(to bottom, #DAB9F6 0%, #C592EC 100%);
+	background-image: -ms-linear-gradient(top, #DAB9F6 0%, #C592EC 100%);
+	background-image: -moz-linear-gradient(top, #DAB9F6 0%, #C592EC 100%);
+	background-image: -o-linear-gradient(top, #DAB9F6 0%, #C592EC 100%);
+	background-image: -webkit-linear-gradient(top, #DAB9F6 0%, #C592EC 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #DAB9F6), color-stop(1, #C592EC));
+}
+#jjtabs .responsive-tabs__list .purple:hover {
+	background-color: #C592EC;
+	background-image: linear-gradient(to bottom, #C592EC 0%, #A357DD 100%);
+	background-image: -ms-linear-gradient(top, #C592EC 0%, #A357DD 100%);
+	background-image: -moz-linear-gradient(top, #C592EC 0%, #A357DD 100%);
+	background-image: -o-linear-gradient(top, #C592EC 0%, #A357DD 100%);
+	background-image: -webkit-linear-gradient(top, #C592EC 0%, #A357DD 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #C592EC), color-stop(1, #A357DD));
+}
+#jjtabs .responsive-tabs__list .purple--active, #jjtabs .responsive-tabs__list .purple--active:hover {
+	color: white;
+	background-color: #A357DD;
+	background-image: linear-gradient(to bottom, #A357DD 0%, #7D23C2 100%);
+	background-image: -ms-linear-gradient(top, #A357DD 0%, #7D23C2 100%);
+	background-image: -moz-linear-gradient(top, #A357DD 0%, #7D23C2 100%);
+	background-image: -o-linear-gradient(top, #A357DD 0%, #7D23C2 100%);
+	background-image: -webkit-linear-gradient(top, #A357DD 0%, #7D23C2 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #A357DD), color-stop(1, #7D23C2));
 }
