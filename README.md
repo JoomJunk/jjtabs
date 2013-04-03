@@ -1,7 +1,7 @@
 JJ Tabs
 ======
 
-This plugin is still a beta - it is not available for public download on JoomJunk yet!!
+This plugin is still a alpha - it is not available for public download on JoomJunk yet!!
 
 JoomJunk Tabs - A PHP/jQuery tabs system designed for use on Joomla sites
 
