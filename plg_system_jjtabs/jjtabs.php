@@ -18,8 +18,8 @@ class plgSystemJJTabs extends JPlugin
 {
 	function __construct(& $subject, $config)
 	{
-		parent::__construct($subject, $config);
 		$this->loadLanguage();
+		parent::__construct($subject, $config);
 	}
 	
 	function onAfterDispatch()
